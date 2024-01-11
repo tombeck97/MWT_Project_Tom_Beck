@@ -20,7 +20,7 @@ public class Spieler {
 
     }
 
-    public Spieler(String player, String decription, boolean full) {
+    public Spieler(String player, String description, boolean full) {
         this.player = player;
         this.description = description;
         this.full = full; 
@@ -38,7 +38,7 @@ public class Spieler {
         return player;
     }
 
-    public void setPlayer(){
+    public void setPlayer(String player){
         this.player = player;
     }
 
