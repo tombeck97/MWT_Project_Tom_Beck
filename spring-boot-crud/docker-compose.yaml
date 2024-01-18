@@ -12,8 +12,7 @@ services:
       - "3306:3306"
     networks:
       - coursenet
-    healthcheck:
-      test: ["CMD-SHELL", "mysqladmin", "ping", "-h", "localhost"]
+
 
   springboot:
     build:
@@ -24,7 +23,7 @@ services:
     depends_on:
       - database
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/test_schema
+      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/project_tom
       SPRING_DATASOURCE_USERNAME: tom
       SPRING_DATASOURCE_PASSWORD: tom
     restart: on-failure

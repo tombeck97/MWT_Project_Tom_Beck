@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spieler beartbeiten</title>
+</head>
+<body>
+    <form th:action="@{'/players/edit/' + Spieler.id}" method="put">
+      <input type="hidden" name="id" th:value="${Spieler.id}">
+      <label>Title: <input type="text" name="title" th:value="${Spieler.title}"></label><br>
+      <label>Description: <input type="text" name="description" th:value="${Spieler.description}"></label><br>
+      <label>Full: <input type="checkbox" name="full" th:checked="${Spieler.full}"></label><br>
+      <button type="submit">Update</button>
+    </form>
+</body>
+</html>

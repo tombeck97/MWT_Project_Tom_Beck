@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses</title>
+    <!-- Add Font Awesome CDN link for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .add-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #333;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .add-button:hover {
+            background-color: #f2f2f2;
+        }
+
+        .delete-button {
+            display: inline-block;
+            padding: 10px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #FF0000;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delete-button:hover {
+            background-color: #CC0000;
+        }
+
+        .icon {
+            color: #fff;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Alle Spieler</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Full</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each="palyers : ${Spieler}">
+        <td th:text="${Spieler.id}"></td>
+        <td th:text="${Spieler.title}"></td>
+        <td th:text="${Spieler.description}"></td>
+        <td th:text="${Spieler.full}"></td>
+        <td>
+            <a th:href="@{'/players/remove/' + ${Spieler.id}}" class="delete-button">
+                <i class="fas fa-trash icon"></i>Delete
+            </a>
+
+        </td>
+    </tr>
+</table>
+
+
+    <a href="http://localhost:8080/courses/create" class="add-button">Add Course</a>
+
+</body>
+</html>

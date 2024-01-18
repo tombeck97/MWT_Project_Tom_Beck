@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spieler herausnehmen</title>
+</head>
+<body>
+        <form th:action="@{'/players/delete/' + Spieler.id}" method="post">
+            <input type="hidden" name="id" th:value="${Spieler.id}">
+            <p>Sicher, dass der Spieler entfernt werden soll?</p>
+            <button type="submit">Ja, herausnehmen!</button>
+            <a th:href="@{'/palyers/view'}">Cancel</a>
+        </form>
+
+</body>
+</html>

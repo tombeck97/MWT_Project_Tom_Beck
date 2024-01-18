@@ -1,0 +1,9 @@
+FROM nginx:latest
+
+#ENV API_BASE_URL http://localhost:8080/courses/view
+
+COPY frontend/* /usr/share/nginx/html/
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
