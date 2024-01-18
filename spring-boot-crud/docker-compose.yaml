@@ -30,6 +30,13 @@ services:
     networks:
       - coursenet
 
+  frontend:
+    build:
+      context: ./src/main/resources
+      dockerfile: Dockerfile-frontend
+    ports:
+      - "80:80"
+
   networks:
   coursenet:
     driver: bridge
